@@ -118,14 +118,14 @@ for i in {1..12}; do  # Attendre jusqu'à 2 minutes (12 x 10 secondes)
 done
 
 # Envoi des sauvegardes via SFTP
-log_message "Envoi des sauvegardes vers le serveur distant..."
+#log_message "Envoi des sauvegardes vers le serveur distant..."
 
-lftp <<EOF
-open -u $SFTP_USER, sftp://$SFTP_HOST:$SFTP_PORT
-set sftp:connect-program "ssh -o StrictHostKeyChecking=accept-new -a -x -i $SSH_KEY"
-mirror -R $BACKUP_DIR/ $REMOTE_DIR/
-quit
-EOF
+#lftp <<EOF
+#open -u $SFTP_USER, sftp://$SFTP_HOST:$SFTP_PORT
+#set sftp:connect-program "ssh -o StrictHostKeyChecking=accept-new -a -x -i $SSH_KEY"
+#mirror -R $BACKUP_DIR/ $REMOTE_DIR/
+#quit
+#EOF
 
 
 log_message "Processus de sauvegarde terminé"
